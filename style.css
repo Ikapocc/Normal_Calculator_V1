@@ -1,0 +1,254 @@
+:root{
+--primary-main-background-color: hsl(222, 26%, 31%);
+--primary-toggle-keypad-background-color: hsl(223, 31%, 20%);
+--primary-screen-background-color: hsl(224, 36%, 15%);
+
+--primary-key-background-color: hsl(225, 21%, 49%);
+--primary-key-shadow-color: hsl(224, 28%, 35%);
+--primary-toggle-key-background-color: hsl(6, 63%, 50%);
+--primary-toggle-key-shadow-color: hsl(6, 70%, 34%);
+--primary-buttons-background-color: hsl(30, 25%, 89%);
+--primary-buttons-shadow-color: hsl(28, 16%, 65%);
+
+--primary-text-color: hsl(221, 14%, 31%);
+--primary-white-color: hsl(0, 0%, 100%);
+
+--second-main-background-color: hsl(0, 0%, 90%);
+--second-toggle-keypad-background-color: hsl(0, 5%, 81%);
+--second-screen-background-color: hsl(0, 0%, 93%);
+
+--second-key-background-color: hsl(185, 42%, 37%);
+--second-key-shadow-color: hsl(185, 58%, 25%);
+--second-toggle-key-background-color: hsl(25, 98%, 40%);
+--second-toggle-key-shadow-color: hsl(25, 99%, 27%);
+--second-buttons-background-color: hsl(45, 7%, 89%);
+--second-buttons-shadow-color: hsl(35, 11%, 61%);
+
+--second-text-color: hsl(60, 10%, 19%);
+
+--third-main-background-color: hsl(268, 75%, 9%);
+--third-toggle-keypad-background-color: hsl(268, 71%, 12%);
+--third-screen-background-color: hsl(268, 71%, 12%);
+
+--third-key-background-color: hsl(281, 89%, 26%);
+--third-key-shadow-color: hsl(285, 91%, 52%);
+--third-toggle-key-background-color: hsl(176, 100%, 44%);
+--third-toggle-key-shadow-color: hsl(177, 92%, 70%);
+--third-buttons-background-color: hsl(268, 47%, 21%);
+--third-buttons-shadow-color: hsl(290, 70%, 36%);
+
+--third-result-color: hsl(198, 20%, 13%);
+--third-text-color: hsl(52, 100%, 62%);
+
+--font-size-def: 32px;
+--padding-min: 1rem;
+--padding-def: 2rem;
+--padding-big: 2.5rem;
+--radius: 10px
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html,body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+img,picture,video,canvas,svg {
+    display: inherit;
+    max-width: 100%;
+}
+
+input,button,textarea,select {
+    font: inherit;
+}
+
+p,h1,h2,h3,h4,h5,h6 {
+    overflow-wrap: break-word;
+}
+
+h1,h2,h3 {
+    line-height: 1;
+}
+
+h1{
+    font-size: clamp(1rem, 2rem, 2.5rem);
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'League Spartan', sans-serif;
+    background-color: var(--primary-main-background-color);
+    min-width: 60%;
+}
+
+.mainbody{
+    margin-inline: auto;
+}
+
+.calc{
+    font-size: var(--font-size-def);
+}
+
+.theme, .themenumbs{
+    font-size: 10px;
+}
+
+.flexpart{
+    display: flex;
+    align-items: end;
+    gap: var(--padding-def);
+}
+
+.touchbtns{
+    background-color: var(--primary-screen-background-color);
+    border-radius: 15px;
+    height: 1rem;
+}
+
+.bigcont{
+    background-color: var(--primary-main-background-color);
+    color: var(--primary-white-color);
+}
+
+.toppart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topleft{
+    display: flex;
+    align-items: center;
+    gap: var(--padding-def);
+}
+
+.numbrs{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn{
+    background-color: var(--primary-toggle-key-background-color);
+    border: none;
+    border-radius: var(--radius);
+    color: transparent;
+    cursor: pointer;
+    max-width: 1rem;
+    max-height: 1rem;
+}
+
+.screen{
+    display: flex;
+    justify-content: end;
+    background-color: var(--primary-screen-background-color);
+    padding: 2rem 0;
+    margin-block: 1rem 2rem;
+    border-radius: var(--radius);
+}
+
+.screennumber{
+    font-size: var(--font-size-def);
+    color: var(--white-color);
+    margin-inline-end: 1rem;
+}
+
+.tecla, .btnresult, .btntec, .btnreset{
+    border: none;
+    padding: .2rem 1.5rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.tecla{
+    box-shadow: 0 3px var(--primary-buttons-shadow-color);
+}
+
+.btntec, .btnreset{
+    box-shadow: 0 3px var(--primary-key-shadow-color);
+}
+
+.btnresult{
+    box-shadow: 0 3px var(--primary-toggle-key-shadow-color);
+}
+
+.teclas{
+    background-color: var(--primary-toggle-keypad-background-color);
+    padding: var(--padding-def);
+    border-radius: var(--radius);
+}
+
+.botones{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+}
+
+.btnresult, .btntec, .btnreset{
+    color: var(--white-color);
+    font-size: var(--font-size-def);
+}
+
+.btntec, .btnreset{
+    background-color: var(--primary-key-background-color);
+}
+
+.btnresult{
+    background-color: var(--primary-toggle-key-background-color);
+}
+
+.tecla{
+    background-color: var(--primary-buttons-background-color);
+    color: var(--primary-text-color);
+    font-size: var(--font-size-def);
+}
+
+.btnreset, .btnresult{
+    grid-column: span 2;
+}
+
+.vsb{
+    opacity: 1;
+}
+
+.vsn{
+    opacity: 0.3;
+}
+
+@media (max-width:500px){
+    .teclas{
+        padding: 16px;
+    }
+
+    .botones{
+        gap: 1rem;
+    }
+
+    .teclas .btnresult, .btntec, .btnreset{
+        padding: .2rem .5rem;
+    }
+
+    .btnresult, .btntec, .btnreset{
+        font-size: 16px;
+    }
+
+    .btnresult, .btnreset{
+        padding-block: .8rem;
+    }
+}
